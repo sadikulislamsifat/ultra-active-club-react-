@@ -26,7 +26,7 @@ const Container = () => {
     return (
         <div className='main-container'>
           
-          <div className='p-2 md:p-7 lg:p-12 bg-gray-200'>
+          <div className='p-2 md:p-7  lg:p-12 bg-gray-200'>
              <div>
             
               <p className='mt-3 font-bold text-xl'>Select today's ecercise</p> 

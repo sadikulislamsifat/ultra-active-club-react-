@@ -4,3 +4,8 @@
     top: 0;
     
 }
+@media  screen and (max-width: 776px) {
+    .summary-container{
+        padding: 25px;
+    }
+}

@@ -32,9 +32,9 @@ const Summary = ({details}) => {
 
     return (
         <div className='p-2 md:p-5 summary-container  bg-white'>
-            <div className="profile  flex items-center">
-                <img className='w-16 h-16 rounded-full' src={profile} alt="" />
-                <div className='ml-1 md:ml-3'>
+            <div className="profile  flex items-center md:justify-between lg:justify-start">
+                <img className='w-14 h-14 rounded-full' src={profile} alt="" />
+                <div className='ml-3 md:ml-1 lg:ml-4'>
                     <h1 className='font-bold text-sm md:text-xl'>Sadikul Islam</h1>
                     
                     <p className='text-gray-400'><FontAwesomeIcon icon={faLocationDot} /><small className='ml-1'>Dhaka, Bangladesh</small></p>
