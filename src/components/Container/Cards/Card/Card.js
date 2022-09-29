@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Card = ({card}) => {
+const Card = ({card, handleAddToList}) => {
     const {about, age, name, picture, time} = card;
     return (
         <div>
@@ -13,7 +13,7 @@ const Card = ({card}) => {
     <p className='font-bold'>For Age: {age}</p>
     <p className='font-bold'>Time required: {time}s</p>
     <div className=" mt-3">
-      <button className="btn btn-primary w-full">Add to list</button>
+      <button onClick={() => handleAddToList(card)} className="btn btn-primary w-full">Add to list</button>
     </div>
   </div>
 </div>
