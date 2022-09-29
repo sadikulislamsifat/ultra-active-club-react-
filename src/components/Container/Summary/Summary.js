@@ -69,11 +69,11 @@ const Summary = ({details}) => {
             <div>
             <div>
             <h1 className='font-bold mt-8  text-xl'>Exercise Details</h1>
-            <div className='bg-gray-200 mt-4 p-1 md:p-3  rounded-md flex justify-between'>
+            <div className='bg-gray-200 mt-4 p-4  rounded-md flex justify-between'>
                 <p><span className="font-bold">Exercise time</span> </p>
                 <p><small>{details} seconds</small></p>
                </div>
-            <div className='bg-gray-200 mt-3 p-1 md:p-4 rounded-md flex justify-between'>
+            <div className='bg-gray-200 mt-3 p-4 rounded-md flex justify-between'>
                 <p><span className="font-bold">Break time</span> </p>
                 <p><small>{timeBreak} seconds</small></p>
                </div>
