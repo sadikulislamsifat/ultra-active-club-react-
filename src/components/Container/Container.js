@@ -5,11 +5,13 @@ import Excerse from './Summary/Exercise/Excerse';
 import profile from '../../profile.jpeg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDumbbell, faLocation, faLocationArrow, faLocationDot, faMap } from '@fortawesome/free-solid-svg-icons';
+import Summary from './Summary/Summary';
 
 const Container = () => {
     const [cards, setCards] = useState([]);
-    const [details, setDetails] = useState([]);
-    console.log(details)
+    const [details, setDetails] = useState(0);
+    
+    // console.log(details)
 
     useEffect(() => {
         fetch('fakedata.json')
@@ -18,9 +20,8 @@ const Container = () => {
     },[]);
 
     const handleAddToList = (card) => {
-        console.log(card);
-        const newCard =[...details,card ];
-        setDetails(newCard)
+        // console.log(card);
+       setDetails(card.time + details)
     }
     return (
         <div className='main-container'>
@@ -38,7 +39,7 @@ const Container = () => {
                 </div>      
         </div>
         <div>
-        <div className='p-2 md:p-5 summary-container  bg-white'>
+        {/* <div className='p-2 md:p-5 summary-container  bg-white'>
             <div className="profile  flex items-center">
                 <img className='w-16 h-16 rounded-full' src={profile} alt="" />
                 <div className='ml-1 md:ml-3'>
@@ -85,7 +86,8 @@ const Container = () => {
                 <button className="btn btn-primary w-full">Activity Completed</button>
             </div>
 
-        </div>
+        </div> */}
+        <Summary details={details} />
         </div>
             
             
