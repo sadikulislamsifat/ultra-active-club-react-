@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import Cards from './Cards/Cards';
-import Summary from './Summary/Summary';
 import './Container.css'
 import Card from './Cards/Card/Card';
+import Excerse from './Summary/Exercise/Excerse';
+import profile from '../../profile.jpeg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDumbbell, faLocation, faLocationArrow, faLocationDot, faMap } from '@fortawesome/free-solid-svg-icons';
 
 const Container = () => {
     const [cards, setCards] = useState([]);
+    const [details, setDetails] = useState([]);
+    console.log(details)
+
     useEffect(() => {
         fetch('fakedata.json')
         .then(res => res.json())
@@ -13,15 +18,17 @@ const Container = () => {
     },[]);
 
     const handleAddToList = (card) => {
-        console.log(card)
+        console.log(card);
+        const newCard =[...details,card ];
+        setDetails(newCard)
     }
     return (
         <div className='main-container'>
           
-          <div className='p-2 md:p-8 lg:p-14 bg-gray-200'>
+          <div className='p-2 md:p-7 lg:p-12 bg-gray-200'>
              <div>
-             <h1 className='text-2xl font-bold text-blue-500'>ULTRA-ACTIVE-CLUB</h1>  
-              <p className='mt-5 font-bold text-xl'>Select today's ecercise</p> 
+             <h1 className='text-2xl font-bold text-blue-500'><FontAwesomeIcon icon={faDumbbell} /><span className='ml-2'> ULTRA-ACTIVE-CLUB</span></h1>  
+              <p className='mt-3 font-bold text-xl'>Select today's ecercise</p> 
                 </div> 
                 <div className='mt-10 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                     {
@@ -30,7 +37,57 @@ const Container = () => {
                     }
                 </div>      
         </div>
-            <Summary />
+        <div>
+        <div className='p-2 md:p-5 summary-container  bg-white'>
+            <div className="profile  flex items-center">
+                <img className='w-16 h-16 rounded-full' src={profile} alt="" />
+                <div className='ml-1 md:ml-3'>
+                    <h1 className='font-bold text-sm md:text-xl'>Sadikul Islam</h1>
+                    
+                    <p className='text-gray-400'><FontAwesomeIcon icon={faLocationDot} /><small className='ml-1'>Dhaka, Bangladesh</small></p>
+                </div>
+
+            </div>
+            <div className='bg-gray-200 grid grid-cols-3 p-1 md:p-3 mt-8 rounded-md'>
+                <div>
+                    <h1><span className="font-bold">75</span><small>kg</small></h1>
+                    <p><small>Weight</small></p>
+                </div>
+                <div>
+                    <h1 className='font-bold'>6.5</h1>
+                    <p><small>Height</small></p>
+                </div>
+                <div>
+                    <h1><span className="font-bold">75</span><small>yrs</small></h1>
+                    <p><small>Age {}</small></p>
+                </div>
+                
+            </div>
+            <h1 className="font-bold mt-8 text-xl">Add A Break</h1>
+            <div>
+                
+            </div>
+
+            <div>
+            <div>
+            <h1 className='font-bold mt-8  text-xl'>Exercise Details</h1>
+            <div className='bg-gray-200 mt-4 p-1 md:p-3  rounded-md flex justify-between'>
+                <p><span className="font-bold">Exercise time</span> </p>
+                <p><small>{details.length} seconds</small></p>
+               </div>
+            <div className='bg-gray-200 mt-3 p-1 md:p-4 rounded-md flex justify-between'>
+                <p><span className="font-bold">Break time</span> </p>
+                <p><small>200 seconds</small></p>
+               </div>
+        </div>
+            </div>
+            <div className='mt-8'>
+                <button className="btn btn-primary w-full">Activity Completed</button>
+            </div>
+
+        </div>
+        </div>
+            
             
         </div>
     );

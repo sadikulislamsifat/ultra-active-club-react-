@@ -2,3 +2,7 @@
     display: grid;
     grid-template-columns: 6fr 2fr;
 }
+.summary-container{
+    
+    position: sticky;
+}
