@@ -28,7 +28,7 @@ const Container = () => {
           
           <div className='p-2 md:p-7 lg:p-12 bg-gray-200'>
              <div>
-             <h1 className='text-2xl font-bold text-blue-500'><FontAwesomeIcon icon={faDumbbell} /><span className='ml-2'> ULTRA-ACTIVE-CLUB</span></h1>  
+            
               <p className='mt-3 font-bold text-xl'>Select today's ecercise</p> 
                 </div> 
                 <div className='mt-10 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>

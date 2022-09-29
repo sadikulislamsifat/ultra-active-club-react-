@@ -1,9 +1,9 @@
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import profile from '../../../profile.jpeg'
-import Excerse from './Exercise/Excerse';
+import profile from '../../../profile.jpeg';
 import './Summary.css';
+import Swal from 'sweetalert2'
 
 const Summary = ({details}) => {
     const [times , setTimes] = useState([]);
@@ -17,6 +17,13 @@ const Summary = ({details}) => {
         console.log(e)
         localStorage.setItem("time", e);
 
+    }
+    const Toast = () => {
+        Swal.fire(
+            'Good job!',
+            'You clicked the  button!',
+            'success'
+          )
     }
 
     const timeBreak = localStorage.getItem("time");
@@ -51,11 +58,11 @@ const Summary = ({details}) => {
             </div>
             <h1 className="font-bold mt-8 text-xl">Add A Break</h1>
             <div>
-                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-primary text-white rounded-lg p-2 ml-1'>10s</p></button>
-                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-primary text-white rounded-lg p-2 ml-1'>15s</p></button>
-                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-primary text-white rounded-lg p-2 ml-1'>20s</p></button>
-                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-primary text-white rounded-lg p-2 ml-1'>25s</p></button>
-                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-primary text-white rounded-lg p-2 ml-1'>30s</p></button>
+                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-gray-500 text-white  btn-outline rounded-lg p-2 md:p-2 ml-1 mt-1'>10s</p></button>
+                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-gray-500 text-white  btn-outline rounded-lg p-2 md:p-2 ml-1 mt-1'>15s</p></button>
+                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-gray-500 text-white  btn-outline rounded-lg p-2 md:p-2 ml-1 mt-1'>20s</p></button>
+                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-gray-500 text-white  btn-outline rounded-lg p-2 md:p-2 ml-1 mt-1'>25s</p></button>
+                <button onClick={(e) => breakTime(e.target.innerText)}><p className=' bg-gray-500 text-white  btn-outline rounded-lg p-2 md:p-2 ml-1 mt-1'>30s</p></button>
                 
             </div>
 
@@ -73,7 +80,7 @@ const Summary = ({details}) => {
         </div>
             </div>
             <div className='mt-8'>
-                <button className="btn btn-primary w-full">Activity Completed</button>
+                <button onClick={Toast} className="btn btn-primary w-full">Activity Completed</button>
             </div>
 
         </div>

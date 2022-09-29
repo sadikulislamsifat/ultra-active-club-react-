@@ -6,7 +6,7 @@ const Card = ({card, handleAddToList}) => {
     return (
         <div>
             <div className="card p-2 h-full bg-base-100 shadow-xl">
-  <figure><img className='w-full rounded-md' src='https://placeimg.com/400/225/arch' alt="Shoes" /></figure>
+  <figure><img className='w-full h-52 rounded-md' src={picture} alt="Shoes" /></figure>
   <div className="card-body p-4 pt-7">
     <h2 className="card-title">{name}!</h2>
     <p> {about.slice(0, 140)}... </p>
