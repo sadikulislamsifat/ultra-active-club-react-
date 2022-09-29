@@ -43,15 +43,15 @@ const Summary = ({details}) => {
             </div>
             <div className='bg-gray-200 grid grid-cols-3 p-1 md:p-3 mt-8 rounded-md'>
                 <div>
-                    <h1><span className="font-bold">75</span><small>kg</small></h1>
+                    <h1><span className="font-bold">65</span><small>kg</small></h1>
                     <p><small>Weight</small></p>
                 </div>
                 <div>
-                    <h1 className='font-bold'>6.5</h1>
+                    <h1 className='font-bold'>6.1</h1>
                     <p><small>Height</small></p>
                 </div>
                 <div>
-                    <h1><span className="font-bold">75</span><small>yrs</small></h1>
+                    <h1><span className="font-bold">21</span><small>yrs</small></h1>
                     <p><small>Age {}</small></p>
                 </div>
                 

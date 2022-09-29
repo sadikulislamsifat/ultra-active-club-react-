@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Container.css'
 import Card from './Cards/Card/Card';
-import Excerse from './Summary/Exercise/Excerse';
-import profile from '../../profile.jpeg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDumbbell, faLocation, faLocationArrow, faLocationDot, faMap } from '@fortawesome/free-solid-svg-icons';
+
 import Summary from './Summary/Summary';
 
 const Container = () => {
